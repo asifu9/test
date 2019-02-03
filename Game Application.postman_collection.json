@@ -1,0 +1,265 @@
+{
+	"info": {
+		"_postman_id": "8815ea5e-cba0-4f9e-822b-02bc38587d5c",
+		"name": "Game Application",
+		"description": "This postmain collection will help with the API details of Game Application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create New Player",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n    \"firstName\": \"Tom\",\n    \"lastName\": \"Hank\",\n    \"userName\": \"tHank\",\n    \"avatars\":[   {\n        \n        \"name\": \"SpiderMan\",\n        \"hairColor\": \"GREY\",\n        \"skinColor\": \"ASIAN\",\n        \"gender\": \"FEMALE\",\n        \"score\": 0,\n        \"totalPlayedGames\": 0\n    }]\n}\n    \n    "
+				},
+				"url": {
+					"raw": "http://localhost:8080/player/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"player",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all players",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/player/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"player",
+						""
+					]
+				},
+				"description": "Creating a new player"
+			},
+			"response": []
+		},
+		{
+			"name": "Create New avatar (Character)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n    \"name\": \"Hercules\",\n    \"hairColor\": \"BLACK\",\n    \"skinColor\": \"ASIAN\",\n    \"gender\":\"Male\",\n    \"player\":{\n    \t\n\t    \"id\": 3,\n\t    \"firstName\": \"Tom\",\n\t    \"lastName\": \"Hank\",\n\t    \"dateOfBirth\": 0,\n\t    \"userName\": \"tHank\"\n\t    \n\n    }\n}\n    \n    "
+				},
+				"url": {
+					"raw": "http://localhost:8080/avatar/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"avatar",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all avatar by player id / all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/avatar/player/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"avatar",
+						"player",
+						"2"
+					]
+				},
+				"description": "Creating a new player"
+			},
+			"response": []
+		},
+		{
+			"name": "Create new Game",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n    \"name\": \"CallOfDuty\",\n    \"gameType\": \"ROLE_PLAYING\",\n    \"numberOfPlayer\": 1,\n    \"playArea\":[\n    \t  {\n        \"id\": 1,\n        \"name\": \"CounterStrike\",\n        \"gameType\": \"ROLE_PLAYING\",\n        \"numberOfPlayer\": 1,\n        \"minScore\": 10,\n        \"maxScore\": 20,\n        \"gameLength\": 15\n    }\n\t]\n}\n    \n    "
+				},
+				"url": {
+					"raw": "http://localhost:8080/game/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"game",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all games",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/game/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"game",
+						""
+					]
+				},
+				"description": "Creating a new player"
+			},
+			"response": []
+		},
+		{
+			"name": "Create new Game Instance",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n\t\"playArea\": {\n\t\t\"id\": 1,\n\t\t\"name\": \"CounterStrike\",\n\t\t\"gameType\": \"ROLE_PLAYING\",\n\t\t\"numberOfPlayer\": 1,\n\t\t\"minScore\": 0,\n\t\t\"maxScore\": 0\n\t},\n\t\"game\": {\n\t\t\"id\": 1,\n\t\t\"name\": \"CounterStrike\",\n\t\t\"gameType\": \"ROLE_PLAYING\"\n\t},\n\t\"status\": \"NEW\",\n\t\"gamePlayers\": [{\n\t\t\"avatar\": {\n\t\t\t\"id\": 1,\n\t\t\t\"name\": \"Tom\",\n\t\t\t\"hairColor\": \"BLACK\",\n\t\t\t\"skinColor\": \"WHITE\",\n\t\t\t\"gender\": \"MALE\",\n\t\t\t\"score\": 0,\n\t\t\t\"totalPlayedGames\": 0\n\t\t},\n\t\t\"status\": \"NEW\"\n\t}]\n\n\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/game-instance/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"game-instance",
+						""
+					]
+				},
+				"description": "To create a new instance, you need to use game, play area, list of gamePlayers"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all game instances",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/game-instance/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"game-instance",
+						""
+					]
+				},
+				"description": "Creating a new player"
+			},
+			"response": []
+		},
+		{
+			"name": "Manage game - START the game",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n    \"name\": \"CallOfDuty\",\n    \"gameType\": \"ROLE_PLAYING\",\n    \"numberOfPlayer\": 1\n}\n    \n    "
+				},
+				"url": {
+					"raw": "http://localhost:8080/manage-game/1/START",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"manage-game",
+						"1",
+						"START"
+					]
+				},
+				"description": "This api will trigger a asynchronous thread to simulate the game. hence see the server logs for more details."
+			},
+			"response": []
+		}
+	]
+}
