@@ -85,7 +85,10 @@ public class ManageGame {
 		}else{
 			users=gameEngine.getUsers();
 		}
-
+		
+		if(gameEngine.getGameInstance().getStatus()==GameStatus.END){
+			throw new Exception("Game has been finished...");
+		}
 		
 		switch(action){
 			case START:
